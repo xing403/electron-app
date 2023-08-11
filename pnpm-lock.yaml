@@ -6,6 +6,9 @@ dependencies:
     version: 3.3.4
 
 devDependencies:
+  '@types/node':
+    specifier: ^20.4.9
+    version: 20.4.9
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
     version: 4.2.3(vite@4.4.5)(vue@3.3.4)
@@ -20,7 +23,7 @@ devDependencies:
     version: 5.0.2
   vite:
     specifier: ^4.4.5
-    version: 4.4.5
+    version: 4.4.5(@types/node@20.4.9)
   vue-tsc:
     specifier: ^1.8.5
     version: 1.8.5(typescript@5.0.2)
@@ -372,7 +375,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.4
-      '@types/node': 18.17.4
+      '@types/node': 20.4.9
       '@types/responselike': 1.0.0
     dev: true
 
@@ -395,7 +398,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.17.4
+      '@types/node': 20.4.9
     dev: true
 
   /@types/ms@0.7.31:
@@ -422,7 +425,7 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.17.4
+      '@types/node': 20.4.9
     dev: true
 
   /@types/verror@1.10.6:
@@ -435,7 +438,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.17.4
+      '@types/node': 20.4.9
     dev: true
     optional: true
 
@@ -446,7 +449,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.5
+      vite: 4.4.5(@types/node@20.4.9)
       vue: 3.3.4
     dev: true
 
@@ -1987,7 +1990,7 @@ packages:
     dev: true
     optional: true
 
-  /vite@4.4.5:
+  /vite@4.4.5(@types/node@20.4.9):
     resolution: {integrity: sha512-4m5kEtAWHYr0O1Fu7rZp64CfO1PsRGZlD3TAB32UmQlpd7qg15VF7ROqGN5CyqN7HFuwr7ICNM2+fDWRqFEKaA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2015,6 +2018,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.4.9
       esbuild: 0.18.20
       postcss: 8.4.27
       rollup: 3.28.0
