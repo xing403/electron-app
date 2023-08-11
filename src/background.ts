@@ -1,5 +1,5 @@
 // Electron entry file
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'node:path'
 
 const createWindow = (width = 1400, height = 1000) => {
@@ -10,7 +10,7 @@ const createWindow = (width = 1400, height = 1000) => {
       // nodeIntegration: true,        // 在渲染过成功使用node api
       // contextIsolation: false,       // 上下文隔离
       // webSecurity: false,         // 浏览器跨域检测
-      preload: path.join(__dirname, './preload.js'),  
+      preload: path.join(__dirname, './preload.js'),
     },
   });
   win.webContents.openDevTools(); // 打开窗口的调试工具
@@ -23,4 +23,9 @@ app.whenReady().then(() => {
   } else {
     win.loadFile('index.html')  // 生产环境
   }
+  ipcMain.handle("send-message-main", (_event, data: any) => {
+    console.log(_event, data)
+    return "main receive the message";
+  });
 });
+

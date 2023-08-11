@@ -1,10 +1,12 @@
 <script setup lang="ts">
-console.log(window.plotform)
-window.plotform.func()
+const sendMessageMain = () => {
+  const result = API.sendMessageMain('hi, main')
+  console.log(result)
+}
 </script>
 
 <template>
-  <div></div>
+  <div><button @click="sendMessageMain">sendMessageMain</button></div>
 </template>
 
 <style scoped>
