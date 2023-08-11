@@ -9,8 +9,16 @@ import path from "path";
 const buildBackground = () => {
   // build electron background from ts to js
   require('esbuild').buildSync({
-    entryPoints: ['src/background.ts'],
+    entryPoints: ['plugins/electron/background.ts'],
     outfile: 'dist/background.js',
+    bundle: true,
+    platform: 'node',
+    target: 'node16',
+    external: ['electron']
+  })
+  require('esbuild').buildSync({
+    entryPoints: ['plugins/electron/preload.ts'],
+    outfile: 'dist/preload.js',
     bundle: true,
     platform: 'node',
     target: 'node16',

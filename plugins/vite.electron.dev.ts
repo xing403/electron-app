@@ -6,7 +6,7 @@ import fs from "node:fs";
 const buildBackground = () => {
   // build electron background from ts to js
   require('esbuild').buildSync({
-    entryPoints: ['src/background.ts'],
+    entryPoints: ['plugins/electron/background.ts'],
     outfile: 'dist/background.js',
     bundle: true,
     platform: 'node',
@@ -15,7 +15,7 @@ const buildBackground = () => {
   })
   
   require('esbuild').buildSync({
-    entryPoints: ['src/preload.ts'],
+    entryPoints: ['plugins/electron/preload.ts'],
     outfile: 'dist/preload.js',
     bundle: true,
     platform: 'node',
@@ -38,7 +38,8 @@ export const ElectionDevPlugin = (): Plugin => {
           'dist/background.js',
           IP
         ])
-        fs.watchFile('src/background.ts', () => {
+
+        fs.watchFile('plugins/electron/background.ts', () => {
           // build electron background from ts to js
           electronProcess.kill()
           buildBackground()
@@ -46,12 +47,8 @@ export const ElectionDevPlugin = (): Plugin => {
             'dist/background.js',
             IP
           ])
-          electronProcess.stderr.on('data',(data)=>{
-            console.log(data.toString())
-          })
-        });
-
-      });
+        })
+      })
     }
   }
 }

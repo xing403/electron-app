@@ -18,12 +18,6 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
   });
   winState.manage(win)
   win.webContents.openDevTools(); // 打开窗口的调试工具
-  // globalShortcut.register('Control+L+A', () => {// 注册快捷键
-  //   win.webContents.closeDevTools();
-  // })
-  // globalShortcut.unregister('Control+L+A', () => {// 注销快捷键
-  //   win.webContents.openDevTools();
-  // })
   return win
 }
 app.whenReady().then(() => {
