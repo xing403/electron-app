@@ -24,7 +24,7 @@ export const ElectionDevPlugin = (): Plugin => {
       server.httpServer?.once("listening", () => {
         // get vite server information
         const address = server.httpServer.address() as AddressInfo;
-        const IP = `http://127.0.0.1:${address.port}`
+        const IP = `http://localhost:${address.port}`
         let electronProcess = spawn(require("electron"), [
           'dist/background.js',
           IP
