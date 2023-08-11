@@ -1,5 +1,5 @@
 // Electron entry file
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, dialog } from 'electron';
 import WinState from 'electron-win-state'
 import type { BrowserWindowConstructorOptions } from 'electron';
 import path from 'path'
@@ -12,12 +12,6 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
   const win = new BrowserWindow({
     ...config,
     ...winState.winOptions,
-    // width,               // 桌面程序的宽度
-    // height,              //    ... 高度
-    // parent: config?.parent ?? undefined,   // 父窗口
-    // modal: config?.modal ?? false,        // 模态窗口
-    // show: config?.show ?? true,         // 是否显示
-    // frame: config?.frame ?? true,        // 是否显示边框
     webPreferences: {
       preload: path.join(__dirname, './preload.js'),
     },
@@ -33,8 +27,32 @@ app.whenReady().then(() => {
   } else {
     mainWindow.loadFile('index.html')  // 生产环境
   }
-  mainWindow.webContents.send('main-output', 'Output from Electron');
-});
+  // 窗口中鼠标右键事件
+  // mainWindow.webContents.on('context-menu', (e, props) => {
+  //   // dialog.showOpenDialog({
+  //   //   buttonLabel: '选择文件',
+  //   //   properties: ['openFile', 'multiSelections'],
+  //   //   defaultPath: path.join(__dirname, ''),  // default open path
+  //   //   // filters: [{ name: 'Images', extensions: ['jpg', 'png', 'gif', 'ico', 'jpeg'] }], // need file type
+  //   //   // notify: openFile and openDirectory can't be used together. and OpenDiretory takes precedence over openFile
+  //   //   // properties: ['openFile', 'multiSelections', 'openDirectory', 'showHiddenFiles'], // can options type
+  //   // }).then(({ filePaths }) => { // 获取选择的文件路径
+  //   //   mainWindow.webContents.send('main-output', { x, y, filePaths })
+  //   // })
+  //   // dialog.showSaveDialog({}).then(res => {
+  //   //   mainWindow.webContents.send('main-output', res)
+  //   // })
+  //   dialog.showMessageBox({
+  //     type: 'info',
+  //     buttons: ['取消', '确定', '最小化'],
+  //     title: '提示',
+  //     message: '是否退出程序',
+  //     // detail: '这是一个详细信息',
+  //   }).then((res) => {
+  //     mainWindow.webContents.send('main-output', res)
+  //   })
+  // })
+})
 
 
 
