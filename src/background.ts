@@ -23,7 +23,7 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
     },
   });
   winState.manage(win)
-  //  win.webContents.openDevTools(); // 打开窗口的调试工具
+  win.webContents.openDevTools(); // 打开窗口的调试工具
   return win
 }
 app.whenReady().then(() => {
@@ -33,10 +33,9 @@ app.whenReady().then(() => {
   } else {
     mainWindow.loadFile('index.html')  // 生产环境
   }
-
-  ipcMain.handle("send-message-main", (_event, data: any) => {
-    console.log(_event, data)
-    return "main receive the message";
-  });
+  mainWindow.webContents.send('main-output', 'Output from Electron');
 });
+
+
+
 
