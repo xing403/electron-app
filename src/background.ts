@@ -10,7 +10,7 @@ app.whenReady().then(() => {
       webSecurity: false,         // 关闭浏览器跨域检测
     },
   });
-  win.webContents.openDevTools(); // 打开窗口的调试工具
+  // win.webContents.openDevTools(); // 打开窗口的调试工具
 
   if (process.argv[2]) {
     win.loadURL(process.argv[2])  // 开发环境
