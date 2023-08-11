@@ -1,4 +1,6 @@
 <script setup lang="ts">
+console.log(window.plotform)
+window.plotform.func()
 </script>
 
 <template>

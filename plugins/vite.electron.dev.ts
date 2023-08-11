@@ -13,6 +13,15 @@ const buildBackground = () => {
     target: 'node16',
     external: ['electron']
   })
+  
+  require('esbuild').buildSync({
+    entryPoints: ['src/preload.ts'],
+    outfile: 'dist/preload.js',
+    bundle: true,
+    platform: 'node',
+    target: 'node16',
+    external: ['electron']
+  })
 }
 
 export const ElectionDevPlugin = (): Plugin => {
