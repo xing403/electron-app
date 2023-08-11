@@ -1,5 +1,5 @@
 // Electron entry file
-import { app, BrowserWindow, dialog } from 'electron';
+import { app, BrowserWindow, globalShortcut } from 'electron';
 import WinState from 'electron-win-state'
 import type { BrowserWindowConstructorOptions } from 'electron';
 import path from 'path'
@@ -18,6 +18,12 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
   });
   winState.manage(win)
   win.webContents.openDevTools(); // 打开窗口的调试工具
+  // globalShortcut.register('Control+L+A', () => {// 注册快捷键
+  //   win.webContents.closeDevTools();
+  // })
+  // globalShortcut.unregister('Control+L+A', () => {// 注销快捷键
+  //   win.webContents.openDevTools();
+  // })
   return win
 }
 app.whenReady().then(() => {
@@ -27,31 +33,6 @@ app.whenReady().then(() => {
   } else {
     mainWindow.loadFile('index.html')  // 生产环境
   }
-  // 窗口中鼠标右键事件
-  // mainWindow.webContents.on('context-menu', (e, props) => {
-  //   // dialog.showOpenDialog({
-  //   //   buttonLabel: '选择文件',
-  //   //   properties: ['openFile', 'multiSelections'],
-  //   //   defaultPath: path.join(__dirname, ''),  // default open path
-  //   //   // filters: [{ name: 'Images', extensions: ['jpg', 'png', 'gif', 'ico', 'jpeg'] }], // need file type
-  //   //   // notify: openFile and openDirectory can't be used together. and OpenDiretory takes precedence over openFile
-  //   //   // properties: ['openFile', 'multiSelections', 'openDirectory', 'showHiddenFiles'], // can options type
-  //   // }).then(({ filePaths }) => { // 获取选择的文件路径
-  //   //   mainWindow.webContents.send('main-output', { x, y, filePaths })
-  //   // })
-  //   // dialog.showSaveDialog({}).then(res => {
-  //   //   mainWindow.webContents.send('main-output', res)
-  //   // })
-  //   dialog.showMessageBox({
-  //     type: 'info',
-  //     buttons: ['取消', '确定', '最小化'],
-  //     title: '提示',
-  //     message: '是否退出程序',
-  //     // detail: '这是一个详细信息',
-  //   }).then((res) => {
-  //     mainWindow.webContents.send('main-output', res)
-  //   })
-  // })
 })
 
 
