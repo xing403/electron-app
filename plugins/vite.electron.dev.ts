@@ -6,16 +6,16 @@ import fs from "node:fs";
 const buildBackground = () => {
   // build electron background from ts to js
   require('esbuild').buildSync({
-    entryPoints: ['plugins/electron/background.ts'],
+    entryPoints: ['src/background.ts'],
     outfile: 'dist/background.js',
     bundle: true,
     platform: 'node',
     target: 'node16',
     external: ['electron']
   })
-  
+
   require('esbuild').buildSync({
-    entryPoints: ['plugins/electron/preload.ts'],
+    entryPoints: ['src/preload.ts'],
     outfile: 'dist/preload.js',
     bundle: true,
     platform: 'node',
@@ -32,7 +32,7 @@ export const ElectionDevPlugin = (): Plugin => {
 
       server.httpServer?.once("listening", () => {
         // get vite server information
-        const address = server.httpServer.address() as AddressInfo;
+        const address = server.httpServer?.address() as AddressInfo;
         const IP = `http://localhost:${address.port}`
         let electronProcess = spawn(require("electron"), [
           'dist/background.js',

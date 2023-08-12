@@ -1,7 +1,5 @@
 // Electron production environment
 import type { Plugin } from "vite";
-import type { AddressInfo } from "net";
-import { spawn } from "child_process";
 import * as ElectronBuilder from 'electron-builder'
 import fs from "node:fs";
 import path from "path";
@@ -9,7 +7,7 @@ import path from "path";
 const buildBackground = () => {
   // build electron background from ts to js
   require('esbuild').buildSync({
-    entryPoints: ['plugins/electron/background.ts'],
+    entryPoints: ['src/background.ts'],
     outfile: 'dist/background.js',
     bundle: true,
     platform: 'node',
@@ -17,7 +15,7 @@ const buildBackground = () => {
     external: ['electron']
   })
   require('esbuild').buildSync({
-    entryPoints: ['plugins/electron/preload.ts'],
+    entryPoints: ['src/preload.ts'],
     outfile: 'dist/preload.js',
     bundle: true,
     platform: 'node',

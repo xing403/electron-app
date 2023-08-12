@@ -1,8 +1,9 @@
 // Electron entry file
-import { app, BrowserWindow, globalShortcut, Menu } from 'electron';
+import { app, BrowserWindow, Menu } from 'electron';
 import WinState from 'electron-win-state'
 import type { BrowserWindowConstructorOptions } from 'electron';
-import { CustomMenu, ContextMenu } from './ElectronMenu'
+import { CustomMenu, ContextMenu } from './electron/ElectronMenu'
+import { createTray } from './electron/ElectronTray';
 import path from 'path'
 
 const winState = new WinState({
@@ -17,18 +18,21 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
       preload: path.join(__dirname, './preload.js'),
     },
   });
+  win.webContents.openDevTools()
 
   winState.manage(win)
 
-  const customMenu = Menu.buildFromTemplate(CustomMenu('hi', (args) => {  // 自定义顶部菜单
+  const customMenu = Menu.buildFromTemplate(CustomMenu((args: any) => {  // 自定义顶部菜单
     win.webContents.send('main-output', args)
   }))
 
-  const contextMenu = Menu.buildFromTemplate(ContextMenu('hi', (args) => { })) // 自定义右键菜单
-  win.webContents.on('context-menu', (e, props) => {
+
+  const contextMenu = Menu.buildFromTemplate(ContextMenu()) // 自定义右键菜单
+  win.webContents.on('context-menu', () => {
     contextMenu.popup()
   });
   Menu.setApplicationMenu(customMenu)
+  createTray(win)
   return win
 }
 app.whenReady().then(() => {

@@ -1,6 +1,6 @@
 import { MenuItemConstructorOptions, dialog } from "electron"
 
-const CustomMenu = (args: any, callback: Function) => {
+const CustomMenu = (callback: Function) => {
   const menu: MenuItemConstructorOptions[] = [
     {
       label: '首页',
@@ -66,7 +66,7 @@ const CustomMenu = (args: any, callback: Function) => {
     }]
   return menu
 }
-const ContextMenu = (args, callback: Function) => {
+const ContextMenu = () => {
   const menu: MenuItemConstructorOptions[] = [{
     label: '编辑',
     submenu: [

@@ -9,7 +9,7 @@ contextBridge.exposeInMainWorld("API", {
   sendMessageMain
 });
 
-ipcRenderer.on('main-output', (event, message, level) => {
+ipcRenderer.on('main-output', (_event, message, level) => {
   switch (level) {
     case 'error':
       console.error('main-output:', message); // 输出内容到渲染进程的控制台
