@@ -2,10 +2,10 @@
 import { ref } from 'vue'
 const Text = ref('')
 function copyTextToClipboard() {
-  SYSTEM_API.copyTextToClipboard(`${Math.random()}`)
+  window.SYSTEM_API.copyTextToClipboard(`${Math.random()}`)
 }
 function getClipboardText() {
-  SYSTEM_API.getClipboardText().then((data: string) => {
+  window.SYSTEM_API.getClipboardText().then((data: string) => {
     Text.value = data
   })
 }

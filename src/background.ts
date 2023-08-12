@@ -32,11 +32,11 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
     contextMenu.popup()
   });
   Menu.setApplicationMenu(customMenu)
-  createTray(win)
   return win
 }
 app.whenReady().then(() => {
   const mainWindow = createWindow()
+  createTray(mainWindow)
   if (process.argv[2]) {
     mainWindow.loadURL(process.argv[2])  // 开发环境
   } else {

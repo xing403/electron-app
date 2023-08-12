@@ -23,7 +23,14 @@ const buildBackground = () => {
     external: ['electron']
   })
 }
-
+let electronProcess
+const startProcess = (IP) => {
+  // bug 若为构建: require('electron') 改为 require.resolve("electron")
+  electronProcess = spawn(require("electron"), [
+    'dist/background.js',
+    IP
+  ])
+}
 export const ElectionDevPlugin = (): Plugin => {
   return {
     name: "electron-dev-plugin",
@@ -34,19 +41,12 @@ export const ElectionDevPlugin = (): Plugin => {
         // get vite server information
         const address = server.httpServer?.address() as AddressInfo;
         const IP = `http://localhost:${address.port}`
-        let electronProcess = spawn(require("electron"), [
-          'dist/background.js',
-          IP
-        ])
-
+        startProcess(IP)
         fs.watchFile('plugins/electron/background.ts', () => {
           // build electron background from ts to js
           electronProcess.kill()
           buildBackground()
-          electronProcess = spawn(require("electron"), [
-            'dist/background.js',
-            IP
-          ])
+          startProcess(IP)
         })
       })
     }

@@ -15,6 +15,9 @@ dependencies:
     version: 4.2.4(vue@3.3.4)
 
 devDependencies:
+  '@types/electron':
+    specifier: ^1.6.10
+    version: 1.6.10
   '@types/node':
     specifier: ^20.4.9
     version: 20.4.9
@@ -426,6 +429,15 @@ packages:
     resolution: {integrity: sha512-/vPO1EPOs306Cvhwv7KfVfYvOJqA/S/AXjaHQiJboCZzcNDb+TIJFN9/2C9DZ//ijSKWioNyUxD792QmDJ+HKQ==}
     dependencies:
       '@types/ms': 0.7.31
+    dev: true
+
+  /@types/electron@1.6.10:
+    resolution: {integrity: sha512-MOCVyzIwkBEloreoCVrTV108vSf8fFIJPsGruLCoAoBZdxtnJUqKA4lNonf/2u1twSjAspPEfmEheC+TLm/cMw==}
+    deprecated: This is a stub types definition for electron (https://github.com/electron/electron). electron provides its own type definitions, so you don't need @types/electron installed!
+    dependencies:
+      electron: 25.5.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@types/fs-extra@9.0.13:
