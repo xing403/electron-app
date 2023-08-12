@@ -15,6 +15,7 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
     ...config,
     ...winState.winOptions,
     webPreferences: {
+      sandbox: false, // 关闭沙盒模式使用剪贴板
       preload: path.join(__dirname, './preload.js'),
     },
   });
@@ -25,7 +26,6 @@ const createWindow = (config?: BrowserWindowConstructorOptions) => {
   const customMenu = Menu.buildFromTemplate(CustomMenu((args: any) => {  // 自定义顶部菜单
     win.webContents.send('main-output', args)
   }))
-
 
   const contextMenu = Menu.buildFromTemplate(ContextMenu()) // 自定义右键菜单
   win.webContents.on('context-menu', () => {

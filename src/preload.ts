@@ -1,12 +1,21 @@
 // 预先加载的内容： 渲染进程
-import { contextBridge, ipcRenderer } from "electron";
-
+import { contextBridge, ipcRenderer, clipboard } from "electron";
 const sendMessageMain = async (data: any) => {
   let fallback = await ipcRenderer.invoke("send-message-main", data);
   return fallback;
 };
-contextBridge.exposeInMainWorld("API", {
-  sendMessageMain
+const copyTextToClipboard = async (data: string) => {
+  clipboard.writeText(data);
+};
+// 获取剪贴板中的值
+const getClipboardText = async () => {
+  return clipboard.readText();
+};
+
+contextBridge.exposeInMainWorld("SYSTEM_API", {
+  sendMessageMain,
+  copyTextToClipboard,
+  getClipboardText
 });
 
 ipcRenderer.on('main-output', (_event, message, level) => {
