@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import { ElectionDevPlugin } from "./plugins/vite.electron.dev";
 import { ElectronBuildPlugin } from './plugins/vite.electron.build';
 import { fileURLToPath } from 'url';
+import UnoCSS from 'unocss/vite'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
@@ -11,7 +13,8 @@ export default defineConfig({
   plugins: [
     vue(),
     ElectionDevPlugin(),
-    ElectronBuildPlugin()
+    ElectronBuildPlugin(),
+    UnoCSS(),
   ],
   base: './',
   resolve: {
