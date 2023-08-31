@@ -3,29 +3,25 @@ import type { RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [{
   path: '/',
-  redirect: '/index',
-  name: 'main',
+  name: 'home',
+  component: () => import('@/views/index.vue'),
   meta: {
     title: '首页',
+  }
+}, {
+  path: "/electron",
+  name: 'electron-index',
+  meta: {
+    title: 'electron',
   },
-  children: [
-    {
-      path: '/index',
-      name: 'index',
-      component: () => import('@/views/index.vue'),
-      meta: {
-        title: '首页',
-      },
+  children: [{
+    path: "/electron/copy-text",
+    name: 'electron-copy-text',
+    component: () => import('@/views/electron/copy-text.vue'),
+    meta: {
+      title: '复制文字',
     },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('@/views/login/index.vue'),
-      meta: {
-        title: '登录',
-      },
-    },
-  ],
+  }]
 }]
 const router = createRouter({
   history: createWebHashHistory(),
