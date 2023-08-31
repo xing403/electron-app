@@ -4,5 +4,5 @@ declare module '*.vue' {
   export default component
 }
 declare interface Window {
-  SYSTEM_API: typeof SYSTEM_API;
+  SYSTEM_API: typeof UtilsTools;
 }
