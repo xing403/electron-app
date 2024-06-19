@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^24.6.3
     version: 24.6.3
   typescript:
-    specifier: ^5.0.2
-    version: 5.0.2
+    specifier: ^5.4.5
+    version: 5.4.5
   unocss:
     specifier: ^0.55.3
     version: 0.55.3(postcss@8.4.27)(vite@4.4.5)
@@ -48,7 +48,7 @@ devDependencies:
     version: 4.4.5(@types/node@20.14.5)
   vue-tsc:
     specifier: ^2.0.21
-    version: 2.0.21(typescript@5.0.2)
+    version: 2.0.21(typescript@5.4.5)
 
 packages:
 
@@ -916,7 +916,7 @@ packages:
     resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
     dev: false
 
-  /@vue/language-core@2.0.21(typescript@5.0.2):
+  /@vue/language-core@2.0.21(typescript@5.4.5):
     resolution: {integrity: sha512-vjs6KwnCK++kIXT+eI63BGpJHfHNVJcUCr3RnvJsccT3vbJnZV5IhHR2puEkoOkIbDdp0Gqi1wEnv3hEd3WsxQ==}
     peerDependencies:
       typescript: '*'
@@ -930,7 +930,7 @@ packages:
       computeds: 0.0.1
       minimatch: 9.0.3
       path-browserify: 1.0.1
-      typescript: 5.0.2
+      typescript: 5.4.5
       vue-template-compiler: 2.7.14
     dev: true
 
@@ -3002,9 +3002,9 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript@5.0.2:
-    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
-    engines: {node: '>=12.20'}
+  /typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+    engines: {node: '>=14.17'}
     hasBin: true
     dev: true
 
@@ -3165,16 +3165,16 @@ packages:
       he: 1.2.0
     dev: true
 
-  /vue-tsc@2.0.21(typescript@5.0.2):
+  /vue-tsc@2.0.21(typescript@5.4.5):
     resolution: {integrity: sha512-E6x1p1HaHES6Doy8pqtm7kQern79zRtIewkf9fiv7Y43Zo4AFDS5hKi+iHi2RwEhqRmuiwliB1LCEFEGwvxQnw==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
       '@volar/typescript': 2.3.0
-      '@vue/language-core': 2.0.21(typescript@5.0.2)
+      '@vue/language-core': 2.0.21(typescript@5.4.5)
       semver: 7.5.4
-      typescript: 5.0.2
+      typescript: 5.4.5
     dev: true
 
   /vue@3.3.4:
