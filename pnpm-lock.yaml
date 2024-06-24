@@ -9,11 +9,11 @@ dependencies:
     specifier: ^1.1.22
     version: 1.1.22
   element-plus:
-    specifier: ^2.3.9
-    version: 2.3.9(vue@3.4.29)
+    specifier: ^2.7.6
+    version: 2.7.6(vue@3.4.29)
   vue:
     specifier: ^3.4.29
-    version: 3.4.29(typescript@5.0.2)
+    version: 3.4.29(typescript@5.4.5)
   vue-router:
     specifier: ^4.2.4
     version: 4.2.4(vue@3.4.29)
@@ -42,7 +42,7 @@ devDependencies:
     version: 5.4.5
   unocss:
     specifier: ^0.55.3
-    version: 0.55.3(postcss@8.4.27)(vite@4.4.5)
+    version: 0.55.3(postcss@8.4.38)(vite@4.4.5)
   vite:
     specifier: ^4.4.5
     version: 4.4.5(@types/node@20.14.5)
@@ -179,12 +179,12 @@ packages:
       - supports-color
     dev: true
 
-  /@element-plus/icons-vue@2.1.0(vue@3.4.29):
-    resolution: {integrity: sha512-PSBn3elNoanENc1vnCfh+3WA9fimRC7n+fWkf3rE5jvv+aBohNHABC/KAR5KWPecxWxDTVT1ERpRbOMRcOV/vA==}
+  /@element-plus/icons-vue@2.3.1(vue@3.4.29):
+    resolution: {integrity: sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
-      vue: 3.4.29(typescript@5.0.2)
+      vue: 3.4.29(typescript@5.4.5)
     dev: false
 
   /@esbuild/android-arm64@0.18.20:
@@ -691,7 +691,7 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss@0.55.3(postcss@8.4.27):
+  /@unocss/postcss@0.55.3(postcss@8.4.38):
     resolution: {integrity: sha512-JWfjtSLGuYFWcZwP3eUT2ItdRwehnpmry36cMSuuPNLXG0SPtklP2LRFahvgH85YhASNDAL2OIHP4jGTlG2Jfw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -702,7 +702,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      postcss: 8.4.27
+      postcss: 8.4.38
     dev: true
 
   /@unocss/preset-attributify@0.55.3:
@@ -830,7 +830,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 4.4.5(@types/node@20.14.5)
-      vue: 3.4.29(typescript@5.0.2)
+      vue: 3.4.29(typescript@5.4.5)
     dev: true
 
   /@volar/language-core@2.3.0:
@@ -935,7 +935,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.4.29
       '@vue/shared': 3.4.29
-      vue: 3.4.29(typescript@5.0.2)
+      vue: 3.4.29(typescript@5.4.5)
 
   /@vue/shared@3.4.29:
     resolution: {integrity: sha512-hQ2gAQcBO/CDpC82DCrinJNgOHI2v+FA7BDW4lMSPeBpQ7sRe2OLHWe5cph1s7D8DUQAwRt18dBDfJJ220APEA==}
@@ -1622,13 +1622,13 @@ packages:
       - supports-color
     dev: true
 
-  /element-plus@2.3.9(vue@3.4.29):
-    resolution: {integrity: sha512-TIOLnPl4cnoCPXqK3QYh+jpkthUBQnAM21O7o3Lhbse8v9pfrRXRTaBJtoEKnYNa8GZ4lZptUfH0PeZgDCNLUg==}
+  /element-plus@2.7.6(vue@3.4.29):
+    resolution: {integrity: sha512-36sw1K23hYjgeooR10U6CiCaCp2wvOqwoFurADZVlekeQ9v5U1FhJCFGEXO6i/kZBBMwsE1c9fxjLs9LENw2Rg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
       '@ctrl/tinycolor': 3.6.0
-      '@element-plus/icons-vue': 2.1.0(vue@3.4.29)
+      '@element-plus/icons-vue': 2.3.1(vue@3.4.29)
       '@floating-ui/dom': 1.5.1
       '@popperjs/core': /@sxzz/popperjs-es@2.11.7
       '@types/lodash': 4.14.197
@@ -1642,7 +1642,7 @@ packages:
       lodash-unified: 1.0.3(@types/lodash-es@4.17.8)(lodash-es@4.17.21)(lodash@4.17.21)
       memoize-one: 6.0.0
       normalize-wheel-es: 1.2.0
-      vue: 3.4.29(typescript@5.0.2)
+      vue: 3.4.29(typescript@5.4.5)
     transitivePeerDependencies:
       - '@vue/composition-api'
     dev: false
@@ -3010,7 +3010,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.55.3(postcss@8.4.27)(vite@4.4.5):
+  /unocss@0.55.3(postcss@8.4.38)(vite@4.4.5):
     resolution: {integrity: sha512-laHtypsgqXQ8798h8cYO1fkxPumSQG8Y7GDvvSY1TWmha+mbl1YzbHqakxiJvoThJrMFLiwmpZ2vD7KFbzfGfg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -3026,7 +3026,7 @@ packages:
       '@unocss/cli': 0.55.3
       '@unocss/core': 0.55.3
       '@unocss/extractor-arbitrary-variants': 0.55.3
-      '@unocss/postcss': 0.55.3(postcss@8.4.27)
+      '@unocss/postcss': 0.55.3(postcss@8.4.38)
       '@unocss/preset-attributify': 0.55.3
       '@unocss/preset-icons': 0.55.3
       '@unocss/preset-mini': 0.55.3
@@ -3121,7 +3121,7 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 3.4.29(typescript@5.0.2)
+      vue: 3.4.29(typescript@5.4.5)
     dev: false
 
   /vue-router@4.2.4(vue@3.4.29):
@@ -3130,7 +3130,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.5.0
-      vue: 3.4.29(typescript@5.0.2)
+      vue: 3.4.29(typescript@5.4.5)
     dev: false
 
   /vue-template-compiler@2.7.14:
@@ -3152,7 +3152,7 @@ packages:
       typescript: 5.4.5
     dev: true
 
-  /vue@3.4.29(typescript@5.0.2):
+  /vue@3.4.29(typescript@5.4.5):
     resolution: {integrity: sha512-8QUYfRcYzNlYuzKPfge1UWC6nF9ym0lx7mpGVPJYNhddxEf3DD0+kU07NTL0sXuiT2HuJuKr/iEO8WvXvT0RSQ==}
     peerDependencies:
       typescript: '*'
@@ -3165,7 +3165,7 @@ packages:
       '@vue/runtime-dom': 3.4.29
       '@vue/server-renderer': 3.4.29(vue@3.4.29)
       '@vue/shared': 3.4.29
-      typescript: 5.0.2
+      typescript: 5.4.5
 
   /which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
