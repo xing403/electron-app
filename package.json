@@ -11,7 +11,7 @@
     "dependencies": {
         "electron-win-state": "^1.1.22",
         "element-plus": "^2.3.9",
-        "vue": "^3.4.29",
+        "vue": "^3.4.31",
         "vue-router": "^4.2.4"
     },
     "devDependencies": {
